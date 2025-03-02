@@ -37,7 +37,7 @@ th:hover {
 
 tbody {
     display: block;
-    max-height: 500px; /* Устанавливает ограничение по высоте */
+    max-height: 400px; /* Устанавливает ограничение по высоте */
     overflow-y: auto; /* Добавляет вертикальный скролл */
     width: 100%;
 }
