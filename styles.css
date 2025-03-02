@@ -8,6 +8,20 @@ h1 {
     font-size: 30px;
 }
 
+.top-section {
+    height: 800px;
+    background-color: #f0f0f0; /* Верхний цвет */
+    text-align: center;
+    padding-top: 20px;
+}
+
+.bottom-section {
+    background-color: #d0e1f9; /* Нижний цвет */
+    padding: 20px;
+    text-align: center;
+}
+
+
 input {
     padding: 3px;
     width: 350px;
