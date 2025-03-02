@@ -76,6 +76,10 @@ function createChart(films) {
                 ]
             }]
         }
+        options: {
+        responsive: false, // Отключаем авто-изменение размера
+        maintainAspectRatio: false // Позволяет менять ширину и высоту
+    }
     });
 }
 
