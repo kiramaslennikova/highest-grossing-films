@@ -54,9 +54,8 @@ function sortTable(n) {
 function createChart(films) {
     const countryCount = {};
 
-    // Подсчет количества фильмов по странам
     films.forEach(film => {
-        const countries = film.country.split("\n"); // Разделение, если несколько стран
+        const countries = film.country.split("\n"); 
         countries.forEach(country => {
             country = country.trim();
             countryCount[country] = (countryCount[country] || 0) + 1;
@@ -68,28 +67,27 @@ function createChart(films) {
     new Chart(ctx, {
         type: "pie",
         data: {
-            labels: Object.keys(countryCount), // Страны
+            labels: Object.keys(countryCount),
             datasets: [{
-                data: Object.values(countryCount), // Количество фильмов
+                data: Object.values(countryCount),
                 backgroundColor: [
                     "#FFC3A0", "#A0D8B3", "#A0C4FF", "#FFD6E0", "#C5A3FF", "#F5D6A5"
                 ]
             }]
         },
         options: {
-            responsive: false, // Отключаем авто-изменение размера
-            maintainAspectRatio: false // Позволяет менять ширину и высоту
+            responsive: false,
+            maintainAspectRatio: false
     }
     });
 }
 
-// Вызов функции после загрузки JSON
 document.addEventListener("DOMContentLoaded", () => {
     fetch("films.json")
         .then(response => response.json())
         .then(data => {
             window.filmsData = data;
             displayFilms(data);
-            createChart(data); // Добавляем вызов диаграммы
+            createChart(data);
         });
 });
