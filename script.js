@@ -75,10 +75,10 @@ function createChart(films) {
                     "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"
                 ]
             }]
-        }
+        },
         options: {
-        responsive: false, // Отключаем авто-изменение размера
-        maintainAspectRatio: false // Позволяет менять ширину и высоту
+            responsive: false, // Отключаем авто-изменение размера
+            maintainAspectRatio: false // Позволяет менять ширину и высоту
     }
     });
 }
