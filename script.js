@@ -51,3 +51,41 @@ function sortTable(n) {
     table.innerHTML = "";
     rows.forEach(row => table.appendChild(row));
 }
+function createChart(films) {
+    const countryCount = {};
+
+    // Подсчет количества фильмов по странам
+    films.forEach(film => {
+        const countries = film.country.split("\n"); // Разделение, если несколько стран
+        countries.forEach(country => {
+            country = country.trim();
+            countryCount[country] = (countryCount[country] || 0) + 1;
+        });
+    });
+
+    const ctx = document.getElementById("countryChart").getContext("2d");
+    
+    new Chart(ctx, {
+        type: "pie",
+        data: {
+            labels: Object.keys(countryCount), // Страны
+            datasets: [{
+                data: Object.values(countryCount), // Количество фильмов
+                backgroundColor: [
+                    "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"
+                ]
+            }]
+        }
+    });
+}
+
+// Вызов функции после загрузки JSON
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("films.json")
+        .then(response => response.json())
+        .then(data => {
+            window.filmsData = data;
+            displayFilms(data);
+            createChart(data); // Добавляем вызов диаграммы
+        });
+});
