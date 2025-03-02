@@ -72,7 +72,7 @@ function createChart(films) {
             datasets: [{
                 data: Object.values(countryCount), // Количество фильмов
                 backgroundColor: [
-                    "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"
+                    "#FFC3A0", "#A0D8B3", "#A0C4FF", "#FFD6E0", "#C5A3FF", "#F5D6A5"
                 ]
             }]
         },
